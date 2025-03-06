@@ -12,18 +12,18 @@ class SearchBarViewModel : ViewModel() {
     val searchHistory: LiveData<List<String>> = _searchHistory
 
     fun onSearchTextChange(text: String) {
-        _searchedText.value = text
+        this._searchedText.value = text
     }
 
     fun addToHistory(text: String) {
         if (text.isNotBlank()) {
             val currentHistory = _searchHistory.value.orEmpty() // Obté la llista actual o una llista buida
-            _searchHistory.value = listOf(text) + currentHistory // Afegeix el nou text al principi
-            _searchedText.value = "" // Neteja el text després de fer la cerca
+            this._searchHistory.value = listOf(text) + currentHistory // Afegeix el nou text al principi
+            this._searchedText.value = "" // Neteja el text després de fer la cerca
         }
     }
 
     fun clearHistory() {
-        _searchHistory.value = emptyList()
+        this._searchHistory.value = emptyList()
     }
 }

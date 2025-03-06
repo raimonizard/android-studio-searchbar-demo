@@ -58,6 +58,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     //LIVEDATA
     implementation("androidx.compose.runtime:runtime-livedata:1.6.0")
-
     implementation ("androidx.compose.material3:material3:1.2.0-alpha02")
 }
